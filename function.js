@@ -20,6 +20,6 @@ function testFunc() {
     }
     return str;
 }
-// var str = 'xiaoming'
+// var str = 'xiaoming' 
 var res = testFunc('狮子', '大象', '老虎', '长颈鹿');
 console.log(res);

@@ -5,7 +5,7 @@ var a = 'hello';
 console.log(a);
 //undefined
 var b; // undefined
-console.log(b);
+// console.log(b)
 //Number
 var age = 10;
 console.log(age);
