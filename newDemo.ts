@@ -36,3 +36,17 @@ class Person{
 }
 const p: Person = new Person('wang', 10)
 p.action()
+// 函数类型
+const test:() => string = () => {return 'abc'}
+console.log(test())
+
+// 类型注释, 类型推断
+const typeObj = {
+    name: '小明' // 可以推断出类型
+}
+let one = 1 // 可以推断出类型, 类型推断
+let two = false // 可以推断出类型, 类型推断
+function getTotal(a: number, b :number) { // 不写类型注释，类型判断为any
+    return a+b+''
+}
+const total = getTotal(1, 2)
