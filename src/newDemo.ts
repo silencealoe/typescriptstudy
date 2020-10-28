@@ -102,3 +102,65 @@ const girlArr: GirlType[] = [{
     age: 11
 }]
 console.log(girlArr[0])
+
+// 元组：把数组中的每个元素类型的位置给固定
+const examp: [number, string, boolean] = [1, 'a', true]
+
+// 接口
+interface Animal{ // 接口名称首字母需要大写
+    name: string;
+    size: number;
+    eat: boolean;
+    color?: string; // 接口非必选值
+    [propname:string]: any; //可以加入任意个的属性与属性值
+    action(): string; //接口中的方法
+}
+const animals = {
+    name: 'fish',
+    size: 10,
+    eat: true,
+    color:'red',
+    shape: 'shin',
+    action () {
+        return 'eat' 
+    }
+
+}
+const getAnimal = (animals:Animal) => {
+    console.log(animals.name+animals.size+animals.eat+animals.color+animals.shape)
+    console.log(animals.action())
+}
+getAnimal(animals)
+
+// 接口和类的约束
+class People implements Animal {
+    name = 'xiaoming';
+    size = 22;
+    eat = true;
+    action () {
+        return 'sing song'
+    }
+}
+const pe = new People()
+console.log(pe.name)
+
+// 接口的继承
+interface Plant extends Animal {
+    shave(): string
+}
+const plant = {
+    name: 'tree',
+    size: 11,
+    eat: false,
+    action () {
+        return 'shaveeee'
+    },
+    shave() {
+        return 'huahuahua'
+    }
+}
+const getPlant = (plant:Plant) => {
+    console.log(plant.name + plant.shave())
+
+}
+getPlant(plant)
